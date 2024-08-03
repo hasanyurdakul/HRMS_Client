@@ -7,13 +7,19 @@ function Header() {
     <header className="fixed w-full">
       <nav className="bg-white py-4 dark:bg-black">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-          <a href="#" className="flex items-center">
+          <button
+            href="#"
+            className="flex items-center cursor-pointer"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <img
               src="/assets/images/logo-no-background.png"
               className="h-6 mr-3 sm:h-9"
               alt="hrmap Logo"
             />
-          </a>
+          </button>
           <div className="flex items-center lg:order-2">
             <div className="hidden mt-2 mr-4 sm:inline-block"></div>
 

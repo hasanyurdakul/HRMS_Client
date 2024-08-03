@@ -7,7 +7,12 @@ function LoginPage() {
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 flex justify-center">
       <div className="max-w-screen-xl m-0 sm:m-10 bg-white dark:bg-black shadow sm:rounded-lg flex justify-center flex-1 ">
         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
-          <div>
+          <div
+            className="cursor-pointer"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <img
               src="/assets/images/logo-no-background.png"
               className="w-32 mx-auto"
@@ -35,7 +40,7 @@ function LoginPage() {
 
                   <span className="ml-3">Giriş Yap</span>
                 </button>
-                <h1 className="ml-3 mt-4 text-sm text-white text-center">
+                <h1 className="ml-3 mt-4 text-sm text-black dark:text-white text-center">
                   Hesabın yok mu?
                 </h1>
 

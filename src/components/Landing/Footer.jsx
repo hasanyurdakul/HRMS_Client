@@ -143,7 +143,7 @@ function Footer() {
           >
             <img
               src="/assets/images/logo-icon.png"
-              className="h-6 mr-3 sm:h-9"
+              className="h-9 md:h-6"
               alt="hrmap Logo"
             />
           </a>
