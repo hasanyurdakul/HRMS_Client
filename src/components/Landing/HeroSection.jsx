@@ -24,7 +24,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <img src="/public/assets/images/hero.png" alt="hero image" />
+          <img src="/assets/images/hero.png" alt="hero image" />
         </div>
       </div>
     </section>

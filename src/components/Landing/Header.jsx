@@ -9,9 +9,9 @@ function Header() {
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
           <a href="#" className="flex items-center">
             <img
-              src="/public/assets/images/logo-no-background.png"
+              src="/assets/images/logo-no-background.png"
               className="h-6 mr-3 sm:h-9"
-              alt="Landwind Logo"
+              alt="hrmap Logo"
             />
           </a>
           <div className="flex items-center lg:order-2">

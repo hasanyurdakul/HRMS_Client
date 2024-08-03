@@ -142,7 +142,7 @@ function Footer() {
             className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
           >
             <img
-              src="/public/assets/images/logo-icon.png"
+              src="/assets/images/logo-icon.png"
               className="h-6 mr-3 sm:h-9"
               alt="hrmap Logo"
             />

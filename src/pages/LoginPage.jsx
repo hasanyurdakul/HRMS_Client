@@ -9,7 +9,7 @@ function LoginPage() {
         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
           <div>
             <img
-              src="/public/assets/images/logo-no-background.png"
+              src="/assets/images/logo-no-background.png"
               className="w-32 mx-auto"
             />
           </div>
@@ -74,8 +74,7 @@ function LoginPage() {
           <div
             className="m-12 xl:m-16 w-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage:
-                'url("/public/assets/images/login-background.png")',
+              backgroundImage: 'url("/assets/images/login-background.png")',
             }}
           ></div>
         </div>
