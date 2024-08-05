@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar/index";
 import Header from "../components/Header/index";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 function DashboardPage({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
