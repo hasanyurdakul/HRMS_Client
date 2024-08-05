@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Header from "../components/Header/index";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
 
-function DashboardPage({ children }) {
+function SidebarLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -14,8 +15,9 @@ function DashboardPage({ children }) {
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
           <main>
-            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10  border border-white">
               {children}
+              <Outlet />
             </div>
           </main>
         </div>
@@ -24,4 +26,4 @@ function DashboardPage({ children }) {
   );
 }
 
-export default DashboardPage;
+export default SidebarLayout;

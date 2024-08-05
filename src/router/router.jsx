@@ -3,9 +3,19 @@ import LandingPage from "../pages/LandingPage";
 import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
 import ErrorPage from "../pages/ErrorPage";
-import DashboardPage from "../pages/DashboardPage";
+import SidebarLayout from "../layouts/SidebarLayout";
 
 const router = createBrowserRouter([
+  {
+    path: "/dashboard",
+    element: <SidebarLayout />,
+    children: [
+      {
+        path: "/dashboard/profile",
+        element: <h1 className="border border-white">profile</h1>,
+      },
+    ],
+  },
   {
     path: "/",
     element: <LandingPage />,
@@ -21,10 +31,6 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <ErrorPage />,
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardPage />,
   },
 ]);
 
