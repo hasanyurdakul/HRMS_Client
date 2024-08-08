@@ -16,6 +16,27 @@ export default {
         black: "#141414",
         blackHover: "#000000",
       },
+      screens: {
+        xs: "480px",
+      },
+      borderWidth: {
+        3: "3px",
+      },
+      minWidth: {
+        36: "9rem",
+        44: "11rem",
+        56: "14rem",
+        60: "15rem",
+        72: "18rem",
+        80: "20rem",
+      },
+      maxWidth: {
+        "8xl": "88rem",
+        "9xl": "96rem",
+      },
+      zIndex: {
+        60: "60",
+      },
     },
   },
   darkMode: "class",

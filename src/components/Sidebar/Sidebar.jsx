@@ -2,7 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import SidebarLinkGroup from "./SidebarLinkGroup";
-import { ArrowBackIos, Email, SpaceDashboard } from "@mui/icons-material";
+import {
+  ArrowBackIos,
+  Email,
+  KeyboardTab,
+  SpaceDashboard,
+} from "@mui/icons-material";
 
 function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
   const location = useLocation();
@@ -112,6 +117,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
             </h3>
             <ul className="mt-3">
               {/* Dashboard */}
+              {/**/}{" "}
               <SidebarLinkGroup
                 activecondition={
                   pathname === "/" || pathname.includes("dashboard")
@@ -217,7 +223,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                   );
                 }}
               </SidebarLinkGroup>
-
               {/* Messages */}
               <li
                 className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
@@ -249,7 +254,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                     </div>
                     {/* Badge */}
                     <div className="flex flex-shrink-0 ml-2">
-                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-accent px-2 rounded">
+                      <span className=" inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-primary px-2 rounded">
                         4
                       </span>
                     </div>
@@ -268,15 +273,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
               onClick={() => setSidebarExpanded(!sidebarExpanded)}
             >
               <span className="sr-only">Expand / collapse sidebar</span>
-              <svg
-                className="shrink-0 fill-current text-gray-400 dark:text-gray-500 sidebar-expanded:rotate-180"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-              >
-                <path d="M15 16a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v14a1 1 0 0 1-1 1ZM8.586 7H1a1 1 0 1 0 0 2h7.586l-2.793 2.793a1 1 0 1 0 1.414 1.414l4.5-4.5A.997.997 0 0 0 12 8.01M11.924 7.617a.997.997 0 0 0-.217-.324l-4.5-4.5a1 1 0 0 0-1.414 1.414L8.586 7M12 7.99a.996.996 0 0 0-.076-.373Z" />
-              </svg>
+              <KeyboardTab className="shrink-0 w-4 h-4 fill-current text-gray-400 dark:text-gray-500 sidebar-expanded:rotate-180" />
             </button>
           </div>
         </div>
