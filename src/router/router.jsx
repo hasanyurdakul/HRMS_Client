@@ -3,16 +3,20 @@ import LandingPage from "../pages/LandingPage";
 import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
 import ErrorPage from "../pages/ErrorPage";
-import SidebarLayout from "../layouts/SidebarLayout";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 const router = createBrowserRouter([
   {
     path: "/dashboard",
-    element: <SidebarLayout />,
+    element: <DashboardLayout />,
     children: [
       {
-        path: "/dashboard/profile",
-        element: <h1 className="border border-white">profile</h1>,
+        path: "/dashboard",
+        element: <h1>MAIN</h1>,
+      },
+      {
+        path: "/dashboard/main",
+        element: <h1 className="border border-white">main</h1>,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import React from "react";
 import LoginIcon from "@mui/icons-material/Login";
 import { useNavigate } from "react-router-dom";
+import { TextField } from "@mui/material";
 function LoginPage() {
   const navigate = useNavigate();
   return (
@@ -25,21 +26,24 @@ function LoginPage() {
             <div className="w-full flex-1 mt-8">
               <div className="flex flex-col items-center"></div>
               <div className="mx-auto max-w-xs">
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-white border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="email"
-                  placeholder="Email"
-                />
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-white border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                  type="password"
-                  placeholder="Parola"
-                />
-                <button className="mt-5 tracking-wide font-semibold bg-primary hover:bg-primaryHover text-gray-100 w-full py-4 rounded-lg  transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                  <LoginIcon className="w-6 h-6" />
+                <div className="flex flex-col gap-2">
+                  <TextField
+                    className="w-full px-8 py-4 rounded-lg font-medium bg-white border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                    placeholder="Kullanıcı Adı"
+                    type="text"
+                  />
 
-                  <span className="ml-3">Giriş Yap</span>
-                </button>
+                  <TextField
+                    className="w-full px-8 py-4 rounded-lg font-medium bg-white border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                    placeholder="Parola"
+                    type="password"
+                  />
+                  <button className="mt-5 tracking-wide font-semibold bg-primary hover:bg-primaryHover text-gray-100 w-full py-4 rounded-lg  transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                    <LoginIcon className="w-6 h-6" />
+
+                    <span className="ml-3">Giriş Yap</span>
+                  </button>
+                </div>
                 <h1 className="ml-3 mt-4 text-sm text-black dark:text-white text-center">
                   Hesabın yok mu?
                 </h1>

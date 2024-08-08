@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from "tailwindcss/plugin";
+import forms from "@tailwindcss/forms";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -16,5 +18,20 @@ export default {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+
+  plugins: [
+    forms,
+    // add custom variant for expanding sidebar
+    plugin(({ addVariant, e }) => {
+      addVariant("sidebar-expanded", ({ modifySelectors, separator }) => {
+        modifySelectors(
+          ({ className }) =>
+            `.sidebar-expanded .${e(
+              `sidebar-expanded${separator}${className}`
+            )}`
+        );
+      });
+    }),
+  ],
 };
