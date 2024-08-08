@@ -151,7 +151,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                             />
 
                             <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              Dashboard
+                              Ana Menü
                             </span>
                           </div>
                           {/* Icon */}
@@ -181,7 +181,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                               }
                             >
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Main
+                                Kullanıcılar
                               </span>
                             </NavLink>
                           </li>
@@ -217,7 +217,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                         }`}
                       />
                       <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                        Messages
+                        Mesajlar
                       </span>
                     </div>
                     {/* Badge */}
