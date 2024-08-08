@@ -89,7 +89,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
           {/* Logo */}
           <NavLink end to="/" className="block">
             <img
-              src="/public/assets/images/logo-icon.png"
+              src="/assets/images/logo-icon.png"
               className="w-[32px] h-[32px]"
             />
           </NavLink>
