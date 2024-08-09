@@ -5,6 +5,7 @@ import SidebarLinkGroup from "./SidebarLinkGroup";
 import {
   ArrowBackIos,
   Email,
+  KeyboardArrowDown,
   KeyboardTab,
   SpaceDashboard,
 } from "@mui/icons-material";
@@ -112,13 +113,45 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                 •••
               </span>
               <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                Pages
+                Seçenekler
               </span>
             </h3>
             <ul className="mt-3">
               {/* Dashboard */}
-              {/**/}{" "}
-              <SidebarLinkGroup
+              <li
+                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                  pathname.endsWith("dashboard") &&
+                  "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                }`}
+              >
+                <NavLink
+                  end
+                  to="/dashboard"
+                  className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                    pathname.endsWith("dashboard")
+                      ? ""
+                      : "hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="grow flex items-center">
+                      <SpaceDashboard
+                        className={`shrink-0 w-4 h-4 fill-current ${
+                          pathname.endsWith("dashboard")
+                            ? "text-primary"
+                            : "text-gray-400 dark:text-gray-500"
+                        }`}
+                      />
+                      <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                        Anasayfa
+                      </span>
+                    </div>
+                  </div>
+                </NavLink>
+              </li>
+
+              {/* Dashboard */}
+              {/* <SidebarLinkGroup
                 activecondition={
                   pathname === "/" || pathname.includes("dashboard")
                 }
@@ -154,16 +187,13 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                               Ana Menü
                             </span>
                           </div>
-                          {/* Icon */}
+                          Icon
                           <div className="flex shrink-0 ml-2">
-                            <svg
+                            <KeyboardArrowDown
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${
                                 open && "rotate-180"
                               }`}
-                              viewBox="0 0 12 12"
-                            >
-                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
-                            </svg>
+                            />
                           </div>
                         </div>
                       </a>
@@ -190,9 +220,10 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                     </React.Fragment>
                   );
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> */}
+
               {/* Messages */}
-              <li
+              {/* <li
                 className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
                   pathname.includes("messages") &&
                   "from-accent/[0.12] dark:from-accent/[0.24] to-accent[0.04]"
@@ -220,7 +251,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                         Mesajlar
                       </span>
                     </div>
-                    {/* Badge */}
+                    Badge
                     <div className="flex flex-shrink-0 ml-2">
                       <span className=" inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-primary px-2 rounded">
                         4
@@ -228,7 +259,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                     </div>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

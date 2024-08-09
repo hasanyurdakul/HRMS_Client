@@ -14,6 +14,7 @@ export default {
         accent: "#D90000",
         accentHover: "#B80000",
         black: "#141414",
+        blackContrast: "#1A1A1A",
         blackHover: "#000000",
       },
       screens: {

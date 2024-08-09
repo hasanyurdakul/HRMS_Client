@@ -30,7 +30,13 @@ function DashboardLayout() {
         {/*  Site header */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <main className="grow">
-          <Outlet />
+          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+            <div className="sm:flex sm:justify-between sm:items-center mb-8">
+              <div className="grid grid-cols-12 gap-6">
+                <Outlet />
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </div>

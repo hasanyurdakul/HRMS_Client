@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
 import ErrorPage from "../pages/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardMainPage from "../pages/DashboardPages/DashboardMainPage";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <h1>MAIN</h1>,
+        element: <DashboardMainPage />,
       },
       {
         path: "/dashboard/main",
