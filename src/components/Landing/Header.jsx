@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 function Header() {
   const navigate = useNavigate();
@@ -22,12 +23,12 @@ function Header() {
           </button>
           <div className="flex items-center lg:order-2">
             <div className="hidden mt-2 mr-4 sm:inline-block"></div>
-
+            <ThemeToggle />
             <button
               onClick={() => {
                 navigate("/login");
               }}
-              className="text-white bg-primary hover:bg-primaryHover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0  dark:hover:bg-primaryHover focus:outline-none"
+              className="ml-2  text-white bg-primary hover:bg-primaryHover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0  dark:hover:bg-primaryHover focus:outline-none"
             >
               Giriş Yap
             </button>
