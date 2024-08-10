@@ -3,8 +3,21 @@ import plugin from "tailwindcss/plugin";
 import forms from "@tailwindcss/forms";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  important: "#root",
   theme: {
     extend: {
+      backgroundImage: {
+        cardWaveTopLeft: "url('/assets/blobs/cardWaveTopLeft.svg')",
+        cardWaveTopRight: "url('/assets/blobs/cardWaveTopRight.svg')",
+        cardWaveTopMiddle: "url('/assets/blobs/cardWaveTopMiddle.svg')",
+        cardWaveBottomLeft: "url('/assets/blobs/cardWaveBottomLeft.svg')",
+        cardWaveBottomRight: "url('/assets/blobs/cardWaveBottomRight.svg')",
+        abstractShapeA: "url('/assets/blobs/abstractShapeA.svg')",
+        characterOnDesk: "url('/assets/images/character-on-desk.png')",
+        logoIcon: "url('/assets/images/logo-icon.png')",
+        placeFillerBauhausA: "url('/assets/blobs/placeFillerBauhausA.svg')",
+        placeFillerBauhausB: "url('/assets/blobs/placeFillerBauhausB.svg')",
+      },
       colors: {
         primary: "#0063DB",
         primaryHover: "#0053B3",

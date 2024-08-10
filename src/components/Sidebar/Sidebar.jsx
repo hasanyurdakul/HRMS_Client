@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import {
+  AccountBox,
   ArrowBackIos,
   Email,
   KeyboardArrowDown,
@@ -168,7 +169,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                 >
                   <div className="flex items-center justify-between">
                     <div className="grow flex items-center">
-                      <SpaceDashboard
+                      <AccountBox
                         className={`shrink-0 w-4 h-4 fill-current ${
                           pathname.endsWith("/profile")
                             ? "text-primary"

@@ -1,17 +1,17 @@
 import React from "react";
 
-function ProfileCard() {
+function BiggerProfileCard() {
   return (
-    <div className=" flex flex-col col-span-full sm:col-span-6 xl:col-span-3 bg-white dark:bg-black shadow-sm rounded-xl bg-cardWaveTopLeft bg-no-repeat bg-top">
-      <header className="px-5 py-4 ">
+    <div className=" flex flex-col col-span-full row-span-1 sm:col-span-6 xl:col-span-6 bg-white dark:bg-black shadow-sm rounded-xl bg-no-repeat bg-top bg-cardWaveTopLeft">
+      <header className="px-5 py-4">
         <h2 className="font-semibold text-gray-800 dark:text-gray-100">
           Profilim
         </h2>
       </header>
 
       <div className="flex flex-col grow justify-center gap-2 ">
-        <div className="flex flex-col grow  items-center px-5 py-4 pb-2  ">
-          <div className="flex  items-center gap-1 leading-3 ">
+        <div className="flex flex-col grow justify-between items-center px-5 py-4 pb-2  ">
+          <div className="flex flex-row justify-between items-center gap-1 leading-3 ">
             <div className="flex flex-col max-w-48">
               <h1 className="font-semibold text-3xl h-fit line-clamp-3 text-black dark:text-gray-100">
                 Hasan Yurdakul
@@ -23,7 +23,7 @@ function ProfileCard() {
                 Junior Backend Developer
               </h1>
             </div>
-            <div className="ml-2">
+            <div className="ml-2 max-h-40 max-w-48">
               <img
                 src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=826&t=st=1723304578~exp=1723305178~hmac=c440659046de91858844de833353fe6caffb79add608f3c6feaf904da213ec18"
                 alt="profile_picture"
@@ -55,4 +55,4 @@ function ProfileCard() {
   );
 }
 
-export default ProfileCard;
+export default BiggerProfileCard;
