@@ -35,13 +35,13 @@ function UpcomingEvents() {
               <tr>
                 <td className="p-2">
                   <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
+                    <div className="text-gray-800 dark:text-gray-100 ">
                       Barbekü Partisi
                     </div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-left">
+                  <div className="text-left line-clamp-5 md:line-clamp-none">
                     Yaza veda ederken sıcak bir barbekü partisi düzenliyoruz!
                     Keyifli vakit geçireceğimiz bu etkinlikte, birbirinden
                     lezzetli ızgara yemeklerin tadını çıkaracağız. Ailenizle ve
@@ -66,7 +66,7 @@ function UpcomingEvents() {
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-left">
+                  <div className="text-left line-clamp-5 md:line-clamp-none">
                     Sinema keyfini açık havaya taşıyoruz! Film gecemizde,
                     yıldızların altında harika bir film izleyeceğiz. Patlamış
                     mısırlar ve atıştırmalıklar bizden, yanınıza sadece rahat
@@ -92,7 +92,7 @@ function UpcomingEvents() {
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-left">
+                  <div className="text-left line-clamp-5 md:line-clamp-none">
                     Doğa ile iç içe bir gün geçirmek için harika bir fırsat! Yaz
                     pikniğimizde, açık havada oyunlar oynayacak, keyifli
                     sohbetler eşliğinde lezzetli yiyecekler tadacağız. Geniş
