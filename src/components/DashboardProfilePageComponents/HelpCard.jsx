@@ -27,7 +27,7 @@ function HelpCard() {
           >
             <div className="flex items-center">
               <img
-                src="/public/assets/images/logo-icon.png"
+                src="/assets/images/logo-icon.png"
                 className="w-8 h-8 mr-2"
               />
               <h1 className="text-left font-semibold text-sm">
@@ -50,7 +50,7 @@ function HelpCard() {
           >
             <div className="flex items-center">
               <img
-                src="/public/assets/images/logo-icon.png"
+                src="/assets/images/logo-icon.png"
                 className="w-8 h-8 mr-2"
               />
               <h1 className="text-left font-semibold text-sm">
@@ -72,7 +72,7 @@ function HelpCard() {
           >
             <div className="flex items-center">
               <img
-                src="/public/assets/images/logo-icon.png"
+                src="/assets/images/logo-icon.png"
                 className="w-8 h-8 mr-2"
               />
               <h1 className="text-left font-semibold text-sm">
@@ -94,7 +94,7 @@ function HelpCard() {
           >
             <div className="flex items-center">
               <img
-                src="/public/assets/images/logo-icon.png"
+                src="/assets/images/logo-icon.png"
                 className="w-8 h-8 mr-2"
               />
               <h1 className="text-left font-semibold text-sm">
