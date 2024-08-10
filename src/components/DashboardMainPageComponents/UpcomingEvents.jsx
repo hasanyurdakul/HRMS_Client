@@ -2,7 +2,7 @@ import React from "react";
 
 function UpcomingEvents() {
   return (
-    <div className="col-span-full row-span-2 md:row-span-1 xl:col-span-4 bg-white dark:bg-black shadow-sm rounded-xl">
+    <div className="col-span-full xl:col-span-8 bg-white dark:bg-black shadow-sm rounded-xl">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
         <h2 className="font-semibold text-gray-800 dark:text-gray-100">
           Yaklaşan Etkinlikler
@@ -10,16 +10,22 @@ function UpcomingEvents() {
       </header>
       <div className="p-3">
         {/* Table */}
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto max-h-72 overflow-y-auto">
           <table className="table-auto w-full dark:text-gray-300">
             {/* Table header */}
             <thead className="text-xs uppercase text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-700 dark:bg-opacity-50 rounded-sm">
               <tr>
                 <th className="p-2">
-                  <div className="font-semibold text-left">Kişi</div>
+                  <div className="font-semibold text-left">Etkinlik Adı</div>
                 </th>
                 <th className="p-2">
-                  <div className="font-semibold text-center">Doğum Günü</div>
+                  <div className="font-semibold text-center">Açıklama</div>
+                </th>
+                <th className="p-2">
+                  <div className="font-semibold text-center">Başlangıç</div>
+                </th>
+                <th className="p-2">
+                  <div className="font-semibold text-center">Bitiş</div>
                 </th>
               </tr>
             </thead>
@@ -29,90 +35,77 @@ function UpcomingEvents() {
               <tr>
                 <td className="p-2">
                   <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
                     <div className="text-gray-800 dark:text-gray-100">
-                      Hasan Yurdakul
+                      Barbekü Partisi
                     </div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">15.08.1998</div>
+                  <div className="text-left">
+                    Yaza veda ederken sıcak bir barbekü partisi düzenliyoruz!
+                    Keyifli vakit geçireceğimiz bu etkinlikte, birbirinden
+                    lezzetli ızgara yemeklerin tadını çıkaracağız. Ailenizle ve
+                    arkadaşlarınızla birlikte bu güzel akşamda buluşmak için
+                    sabırsızlanıyoruz. Katılımınızı bekliyoruz!
+                  </div>
+                </td>
+                <td className="p-2">
+                  <div className="text-left">18.08.2024</div>
+                </td>
+                <td className="p-2">
+                  <div className="text-left">19.08.2024</div>
                 </td>
               </tr>
               {/* Row */}
               <tr>
                 <td className="p-2">
                   <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
                     <div className="text-gray-800 dark:text-gray-100">
-                      Taha Yurdakul
+                      Film Gecesi
                     </div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">03.09.2002</div>
+                  <div className="text-left">
+                    Sinema keyfini açık havaya taşıyoruz! Film gecemizde,
+                    yıldızların altında harika bir film izleyeceğiz. Patlamış
+                    mısırlar ve atıştırmalıklar bizden, yanınıza sadece rahat
+                    bir battaniye almayı unutmayın. Hangi filmi izlemek
+                    istediğinizi seçmek için anketimize katılabilirsiniz. Tüm
+                    sinemaseverleri bekliyoruz!
+                  </div>
                 </td>
-              </tr>
+                <td className="p-2">
+                  <div className="text-left">18.08.2024</div>
+                </td>
+                <td className="p-2">
+                  <div className="text-left">19.08.2024</div>
+                </td>
+              </tr>{" "}
               {/* Row */}
               <tr>
                 <td className="p-2">
                   <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
                     <div className="text-gray-800 dark:text-gray-100">
-                      Aslıhan Karaağaç
+                      Yaz Pikniği
                     </div>
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">25.10.2000</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Taha Yurdakul
-                    </div>
+                  <div className="text-left">
+                    Doğa ile iç içe bir gün geçirmek için harika bir fırsat! Yaz
+                    pikniğimizde, açık havada oyunlar oynayacak, keyifli
+                    sohbetler eşliğinde lezzetli yiyecekler tadacağız. Geniş
+                    alanlar, çocuklar için oyun parkı ve dinlenme alanlarıyla
+                    dolu bu etkinlik, herkes için unutulmaz bir deneyim olacak.
+                    Ailenizle ve arkadaşlarınızla katılmayı unutmayın!
                   </div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">03.09.2002</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Furkan Demirbozan
-                    </div>
-                  </div>
+                  <div className="text-left">18.08.2024</div>
                 </td>
                 <td className="p-2">
-                  <div className="text-center">01.10.1997</div>
+                  <div className="text-left">19.08.2024</div>
                 </td>
               </tr>
             </tbody>

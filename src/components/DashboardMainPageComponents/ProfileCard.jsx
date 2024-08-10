@@ -2,7 +2,7 @@ import React from "react";
 
 function ProfileCard() {
   return (
-    <div className=" flex flex-col col-span-full row-span-4 md:row-span-1 sm:col-span-6 xl:col-span-3 bg-white dark:bg-black shadow-sm rounded-xl">
+    <div className=" flex flex-col col-span-full sm:col-span-6 xl:col-span-3 bg-white dark:bg-black shadow-sm rounded-xl">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
         <h2 className="font-semibold text-gray-800 dark:text-gray-100">
           Profilim
@@ -13,7 +13,7 @@ function ProfileCard() {
         <div className="flex flex-col grow  items-center px-5 py-4 pb-2  ">
           <div className="flex  items-center gap-1 leading-3 ">
             <div className="flex flex-col max-w-48">
-              <h1 className="font-semibold text-3xl h-fit text-black dark:text-gray-100">
+              <h1 className="font-semibold text-3xl h-fit line-clamp-3 text-black dark:text-gray-100">
                 Hasan Yurdakul
               </h1>
               <h1 className="text-sm italic h-fit text-black dark:text-gray-100">
@@ -24,7 +24,7 @@ function ProfileCard() {
               </h1>
             </div>
             <img
-              src="https://placehold.co/300x300"
+              src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=826&t=st=1723304578~exp=1723305178~hmac=c440659046de91858844de833353fe6caffb79add608f3c6feaf904da213ec18"
               alt="profile_picture"
               className="w-40  h-40 rounded-xl  mb-4"
             />
