@@ -32,7 +32,7 @@ function DashboardLayout() {
         <main className="grow">
           <div className="px-4 sm:px-6 lg:px-8 pt-4 md:pt-1 w-full max-w-9xl mx-auto">
             <div className="sm:flex sm:justify-between sm:items-center ">
-              <div className="grid grid-cols-12 grid-rows-2  gap-4">
+              <div className="grid grid-cols-12 grid-rows-2 py-8 gap-6">
                 <Outlet />
               </div>
             </div>
