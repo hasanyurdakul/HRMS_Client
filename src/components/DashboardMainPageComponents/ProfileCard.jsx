@@ -9,7 +9,7 @@ function ProfileCard() {
         </h2>
       </header>
 
-      <div className="flex flex-col grow justify-center gap-2">
+      <div className="flex flex-col grow justify-center gap-2 ">
         <div className="flex flex-col grow  items-center px-5 py-4 pb-2  ">
           <div className="flex  items-center gap-1 leading-3 ">
             <div className="flex flex-col max-w-48">
@@ -23,11 +23,13 @@ function ProfileCard() {
                 Junior Backend Developer
               </h1>
             </div>
-            <img
-              src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=826&t=st=1723304578~exp=1723305178~hmac=c440659046de91858844de833353fe6caffb79add608f3c6feaf904da213ec18"
-              alt="profile_picture"
-              className="w-40  h-40 rounded-xl  mb-4"
-            />
+            <div className="ml-2">
+              <img
+                src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=826&t=st=1723304578~exp=1723305178~hmac=c440659046de91858844de833353fe6caffb79add608f3c6feaf904da213ec18"
+                alt="profile_picture"
+                className="rounded-xl mb-4"
+              />
+            </div>
           </div>
         </div>
 

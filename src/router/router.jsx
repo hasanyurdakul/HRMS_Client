@@ -5,6 +5,7 @@ import SignUpPage from "../pages/SignUpPage";
 import ErrorPage from "../pages/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardMainPage from "../pages/DashboardPages/DashboardMainPage";
+import DashboardProfilePage from "../pages/DashboardPages/DashboardProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,8 @@ const router = createBrowserRouter([
         element: <DashboardMainPage />,
       },
       {
-        path: "/dashboard/main",
-        element: <h1 className="border border-white">main</h1>,
+        path: "/dashboard/profile",
+        element: <DashboardProfilePage />,
       },
     ],
   },
