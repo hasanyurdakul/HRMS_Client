@@ -1,11 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transition from "../../utils/Transition";
+import { useDispatch } from "react-redux";
+import { userLogout } from "../../redux/features/userSlice";
 
 // import UserAvatar from "../images/user-avatar-32.png";
 
-function DropdownProfile({ align }) {
+function DropdownProfile({ align, user }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
@@ -36,6 +39,11 @@ function DropdownProfile({ align }) {
     return () => document.removeEventListener("keydown", keyHandler);
   });
 
+  const handleSignOut = () => {
+    setDropdownOpen(!dropdownOpen);
+    dispatch(userLogout());
+  };
+
   return (
     <div className="relative inline-flex">
       <button
@@ -54,7 +62,7 @@ function DropdownProfile({ align }) {
         />
         <div className="flex items-center truncate">
           <span className="truncate ml-2 text-sm font-medium text-gray-600 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-white">
-            Hasan Yurdakul{" "}
+            {user.username}
           </span>
           <svg
             className="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500"
@@ -84,10 +92,10 @@ function DropdownProfile({ align }) {
         >
           <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-gray-200 dark:border-white">
             <div className="font-medium text-gray-800 dark:text-gray-100">
-              Hasan Yurdakul{" "}
+              {user.username}
             </div>
             <div className="text-xs text-gray-500 dark:text-gray-400 italic">
-              Admin
+              <span>Yetki:</span> {user.role}
             </div>
           </div>
           <ul>
@@ -103,8 +111,8 @@ function DropdownProfile({ align }) {
             <li>
               <Link
                 className="font-medium text-sm text-primary hover:text-primaryHover  flex items-center py-1 px-3"
-                to="/signin"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                to="/login"
+                onClick={handleSignOut}
               >
                 Sign Out
               </Link>

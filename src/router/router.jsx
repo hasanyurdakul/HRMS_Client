@@ -6,6 +6,10 @@ import ErrorPage from "../pages/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardMainPage from "../pages/DashboardPages/DashboardMainPage";
 import DashboardProfilePage from "../pages/DashboardPages/DashboardProfilePage";
+import DashboardEmployeesPage from "../pages/DashboardPages/DashboardEmployeesPage";
+import DashboardCreateUserPage from "../pages/DashboardPages/DashboardCreateUserPage";
+import DashboardRegisterCompanyPage from "../pages/DashboardPages/DashboardRegisterCompanyPage";
+import DashboardCreateEmployeePage from "../pages/DashboardPages/DashboardCreateEmployeePage";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +23,22 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/profile",
         element: <DashboardProfilePage />,
+      },
+      {
+        path: "/dashboard/employees",
+        element: <DashboardEmployeesPage />,
+      },
+      {
+        path: "/dashboard/createuser",
+        element: <DashboardCreateUserPage />,
+      },
+      {
+        path: "/dashboard/registercompany",
+        element: <DashboardRegisterCompanyPage />,
+      },
+      {
+        path: "/dashboard/createemployee",
+        element: <DashboardCreateEmployeePage />,
       },
     ],
   },

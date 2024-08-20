@@ -1,5 +1,8 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfigFile from "/tailwind.config.js";
+import { jwtDecode } from "jwt-decode";
+
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 export const tailwindConfig = () => {
   return resolveConfig(tailwindConfigFile);
@@ -34,3 +37,34 @@ export const formatThousands = (value) =>
     maximumSignificantDigits: 3,
     notation: "compact",
   }).format(value);
+
+export const getToken = () => {
+  return localStorage.getItem("hrmapToken");
+};
+
+export const setToken = (token) => {
+  localStorage.setItem("hrmapToken", token);
+};
+
+export const removeToken = () => {
+  localStorage.removeItem("hrmapToken");
+};
+
+export const getDecodedToken = () => {
+  const token = localStorage.getItem("hrmapToken");
+  return jwtDecode(token);
+};
+
+export const getRole = () => {
+  const token = localStorage.getItem("hrmapToken");
+  const decodedToken = jwtDecode(token);
+  return decodedToken[
+    "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+  ];
+};
+
+export const getUsername = () => {
+  const token = localStorage.getItem("hrmapToken");
+  const decodedToken = jwtDecode(token);
+  return decodedToken.sub;
+};

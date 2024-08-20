@@ -1,17 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-import SidebarLinkGroup from "./SidebarLinkGroup";
 import {
   AccountBox,
+  AddBusiness,
   ArrowBackIos,
-  Email,
-  KeyboardArrowDown,
+  Badge,
   KeyboardTab,
+  PersonAdd,
   SpaceDashboard,
 } from "@mui/icons-material";
+import { useSelector } from "react-redux";
 
 function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
+  const user = useSelector((state) => state.user);
   const location = useLocation();
   const { pathname } = location;
 
@@ -118,7 +120,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
               </span>
             </h3>
             <ul className="mt-3">
-              {/* Dashboard */}
+              {/* Root */}
               <li
                 className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
                   pathname.endsWith("dashboard") &&
@@ -151,7 +153,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                 </NavLink>
               </li>
 
-              {/* Dashboard */}
+              {/* Profile */}
               <li
                 className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
                   pathname.endsWith("/profile") &&
@@ -184,116 +186,145 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                 </NavLink>
               </li>
 
-              {/* Dashboard */}
-              {/* <SidebarLinkGroup
-                activecondition={
-                  pathname === "/" || pathname.includes("dashboard")
-                }
-              >
-                {(handleClick, open) => {
-                  return (
-                    <React.Fragment>
-                      <a
-                        href="#0"
-                        className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
-                          pathname === "/" || pathname.includes("dashboard")
-                            ? ""
-                            : "hover:text-gray-900 dark:hover:text-white"
-                        }`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleClick();
-                          setSidebarExpanded(true);
-                        }}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center">
-                            <SpaceDashboard
-                              className={`shrink-0 w-4 h-4 fill-current ${
-                                pathname === "/" ||
-                                pathname.includes("dashboard")
-                                  ? "text-primary"
-                                  : "text-gray-400 dark:text-gray-500"
-                              }`}
-                            />
-
-                            <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              Ana Menü
-                            </span>
-                          </div>
-                          Icon
-                          <div className="flex shrink-0 ml-2">
-                            <KeyboardArrowDown
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${
-                                open && "rotate-180"
-                              }`}
-                            />
-                          </div>
-                        </div>
-                      </a>
-                      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                        <ul className={`pl-8 mt-1 ${!open && "hidden"}`}>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/dashboard/main"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-primary"
-                                  : "text-gray-500/90 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200")
-                              }
-                            >
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Kullanıcılar
-                              </span>
-                            </NavLink>
-                          </li>
-                        </ul>
-                      </div>
-                    </React.Fragment>
-                  );
-                }}
-              </SidebarLinkGroup> */}
-
-              {/* Messages */}
-              {/* <li
-                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
-                  pathname.includes("messages") &&
-                  "from-accent/[0.12] dark:from-accent/[0.24] to-accent[0.04]"
-                }`}
-              >
-                <NavLink
-                  end
-                  to="/dashboard/messages"
-                  className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
-                    pathname.includes("messages")
-                      ? ""
-                      : "hover:text-gray-900 dark:hover:text-white"
+              {/* Employees */}
+              {user.role != "Admin" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/employees") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="grow flex items-center">
-                      <Email
-                        className={`shrink-0 w-4 h-4 fill-current ${
-                          pathname.includes("messages")
-                            ? "text-accent"
-                            : "text-gray-400 dark:text-gray-500"
-                        }`}
-                      />
-                      <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                        Mesajlar
-                      </span>
+                  <NavLink
+                    end
+                    to="/dashboard/employees"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/employees")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <Badge
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/employees")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Personeller
+                        </span>
+                      </div>
                     </div>
-                    Badge
-                    <div className="flex flex-shrink-0 ml-2">
-                      <span className=" inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-primary px-2 rounded">
-                        4
-                      </span>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Create User */}
+              {user.role != "CompanyUser" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createuser") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createuser"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createuser")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <PersonAdd
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createuser")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Hrmap Kullanıcısı Oluştur
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </NavLink>
-              </li> */}
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Register Company */}
+              {user.role === "Admin" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/registercompany") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/registercompany"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/registercompany")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/registercompany")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Şirket Kayıt Et
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Create Employee */}
+              {user.role === "CompanyManager" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createemployee") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createemployee"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createemployee")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createemployee")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Personel Ekle
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
             </ul>
           </div>
         </div>

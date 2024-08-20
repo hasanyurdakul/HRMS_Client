@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import UserMenu from "../DropdownProfile/DropdownProfile";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import MenuIcon from "@mui/icons-material/Menu";
 
 function Header({ sidebarOpen, setSidebarOpen }) {
+  const user = useSelector((state) => state.user);
   return (
     <header
       className={`sticky top-0 before:absolute before:inset-0 before:backdrop-blur-md max-lg:before:bg-white/90 dark:max-lg:before:bg-black before:-z-10 z-30`}
@@ -32,7 +34,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
             <ThemeToggle />
             {/*  Divider */}
             <hr className="w-px h-6 bg-gray-200 dark:bg-white border-none" />
-            <UserMenu align="right" />
+            <UserMenu user={user} align="right" />
           </div>
         </div>
       </div>

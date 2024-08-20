@@ -17,6 +17,7 @@ export default {
         logoIcon: "url('/assets/images/logo-icon.png')",
         placeFillerBauhausA: "url('/assets/blobs/placeFillerBauhausA.svg')",
         placeFillerBauhausB: "url('/assets/blobs/placeFillerBauhausB.svg')",
+        placeFillerBauhausC: "url('/assets/blobs/placeFillerBauhausC.svg')",
       },
       colors: {
         primary: "#0063DB",

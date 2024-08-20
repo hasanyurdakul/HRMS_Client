@@ -33,11 +33,7 @@ function ContactCard() {
             Adres:
           </h1>
           <h1 className="text-base text-right text-gray-800 dark:text-gray-100 line-clamp-3">
-            Birlik Mahallesi, 123. Sokak, No: 4, 06000 Altındağ/Ankara Birlik
-            Mahallesi, 123. Sokak, No: 4, 06000 Altındağ/Ankara Birlik
-            Mahallesi, 123. Sokak, No: 4, 06000 Altındağ/Ankara Birlik
-            Mahallesi, 123. Sokak, No: 4, 06000 Altındağ/Ankara Birlik
-            Mahallesi, 123. Sokak, No: 4, 06000 Altındağ/Ankara
+            Birlik Mahallesi, 123. Sokak, No: 4, 06000 Altındağ/Ankara
           </h1>
         </div>
       </div>

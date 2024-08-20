@@ -24,7 +24,9 @@ export default function ThemeToggle() {
         <LightMode className="dark:hidden w-4 h-4 fill-current text-gray-500/80 dark:text-gray-400/80" />
         {currentTheme == "dark" ? (
           <DarkMode className="w-4 h-4 hidden dark:block fill-current text-gray-500/80 dark:text-gray-400/80" />
-        ) : null}
+        ) : (
+          <></>
+        )}
 
         <span className="sr-only">Switch to light / dark version</span>
       </label>
