@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getToken } from "../../utils/Utils";
+import axios from "axios";
 
 function UpcomingBirthdays() {
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+  const navigate = useNavigate();
+  const token = getToken();
+  const [birthdayList, setBirthdayList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${apiBaseUrl}/Birthday/GetUpcomingBirthdays`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setBirthdayList(res.data.$values));
+  }, []);
+
   return (
     <div className="col-span-full xl:col-span-4 bg-white dark:bg-black shadow-sm rounded-xl bg-cardWaveTopRight bg-no-repeat bg-top">
       <header className="px-5 py-4 ">
@@ -26,95 +44,30 @@ function UpcomingBirthdays() {
             {/* Table body */}
             <tbody className="text-sm font-medium">
               {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
+              {birthdayList &&
+                birthdayList.map((birthday, index) => (
+                  <tr key={index}>
+                    <td className="p-2">
+                      <div className="flex items-center">
+                        <img
+                          src="https://placehold.co/300x300"
+                          className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
+                        />
 
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Hasan Yurdakul
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">15.08.1998</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Taha Yurdakul
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">03.09.2002</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Aslıhan Karaağaç
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">25.10.2000</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Taha Yurdakul
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">03.09.2002</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <img
-                      src="https://placehold.co/300x300"
-                      className="w-9 h-9 rounded-full shrink-0 mr-2 sm:mr-3"
-                    />
-
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Furkan Demirbozan
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">01.10.1997</div>
-                </td>
-              </tr>
+                        <div className="text-gray-800 dark:text-gray-100">
+                          {birthday.employeeFirstName}{" "}
+                          {birthday.employeeLastName}
+                        </div>
+                      </div>
+                    </td>
+                    <td className="p-2">
+                      <div className="text-center">
+                        {birthday.birthDate &&
+                          birthday.birthDate.split("T")[0].replaceAll("-", "/")}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

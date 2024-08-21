@@ -1,0 +1,100 @@
+export const nationalHolidayList = [
+  [
+    {
+      Id: 1,
+      Name: "Yeni Yıl",
+      StartDate: "2024-01-01T00:00:00",
+      EndDate: "2024-01-01T23:59:59",
+    },
+    {
+      Id: 2,
+      Name: "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı",
+      StartDate: "2024-04-23T00:00:00",
+      EndDate: "2024-04-23T23:59:59",
+    },
+    {
+      Id: 3,
+      Name: "1 Mayıs Emek ve Dayanışma Günü",
+      StartDate: "2024-05-01T00:00:00",
+      EndDate: "2024-05-01T23:59:59",
+    },
+    {
+      Id: 4,
+      Name: "19 Mayıs Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+      StartDate: "2024-05-19T00:00:00",
+      EndDate: "2024-05-19T23:59:59",
+    },
+    {
+      Id: 5,
+      Name: "Ramazan Bayramı Arifesi",
+      StartDate: "2024-04-09T00:00:00",
+      EndDate: "2024-04-09T23:59:59",
+    },
+    {
+      Id: 6,
+      Name: "Ramazan Bayramı 1. Gün",
+      StartDate: "2024-04-10T00:00:00",
+      EndDate: "2024-04-10T23:59:59",
+    },
+    {
+      Id: 7,
+      Name: "Ramazan Bayramı 2. Gün",
+      StartDate: "2024-04-11T00:00:00",
+      EndDate: "2024-04-11T23:59:59",
+    },
+    {
+      Id: 8,
+      Name: "Ramazan Bayramı 3. Gün",
+      StartDate: "2024-04-12T00:00:00",
+      EndDate: "2024-04-12T23:59:59",
+    },
+    {
+      Id: 9,
+      Name: "Kurban Bayramı Arifesi",
+      StartDate: "2024-06-16T00:00:00",
+      EndDate: "2024-06-16T23:59:59",
+    },
+    {
+      Id: 10,
+      Name: "Kurban Bayramı 1. Gün",
+      StartDate: "2024-06-17T00:00:00",
+      EndDate: "2024-06-17T23:59:59",
+    },
+    {
+      Id: 11,
+      Name: "Kurban Bayramı 2. Gün",
+      StartDate: "2024-06-18T00:00:00",
+      EndDate: "2024-06-18T23:59:59",
+    },
+    {
+      Id: 12,
+      Name: "Kurban Bayramı 3. Gün",
+      StartDate: "2024-06-19T00:00:00",
+      EndDate: "2024-06-19T23:59:59",
+    },
+    {
+      Id: 13,
+      Name: "Kurban Bayramı 4. Gün",
+      StartDate: "2024-06-20T00:00:00",
+      EndDate: "2024-06-20T23:59:59",
+    },
+    {
+      Id: 14,
+      Name: "15 Temmuz Demokrasi ve Milli Birlik Günü",
+      StartDate: "2024-07-15T00:00:00",
+      EndDate: "2024-07-15T23:59:59",
+    },
+    {
+      Id: 15,
+      Name: "30 Ağustos Zafer Bayramı",
+      StartDate: "2024-08-30T00:00:00",
+      EndDate: "2024-08-30T23:59:59",
+    },
+    {
+      Id: 16,
+      Name: "29 Ekim Cumhuriyet Bayramı",
+      StartDate: "2024-10-29T00:00:00",
+      EndDate: "2024-10-29T23:59:59",
+    },
+  ],
+];

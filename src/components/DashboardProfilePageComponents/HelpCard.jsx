@@ -63,7 +63,7 @@ function HelpCard() {
             bağlantısına tıklayın. E-posta adresinizi girerek şifre sıfırlama
             bağlantısını alın ve yeni bir şifre belirleyin.
           </AccordionDetails>
-        </Accordion>{" "}
+        </Accordion>
         {/* AccordionElement */}
         <Accordion className="bg-transparent border-none shadow-none ">
           <AccordionSummary
@@ -85,7 +85,7 @@ function HelpCard() {
             butonuna tıklayın. İzin tarihlerini ve nedenini girerek talebinizi
             oluşturabilirsiniz.
           </AccordionDetails>
-        </Accordion>{" "}
+        </Accordion>
         {/* AccordionElement */}
         <Accordion className="bg-transparent border-none shadow-none ">
           <AccordionSummary

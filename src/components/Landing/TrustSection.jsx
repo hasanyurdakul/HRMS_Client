@@ -13,7 +13,7 @@ function TrustSection() {
             Dünya Çapında Güvenilir
           </p>
           <h2 className="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white">
-            600 milyondan fazla kullanıcı ve 10.000 ekip tarafından güveniliyor{" "}
+            600 milyondan fazla kullanıcı ve 10.000 ekip tarafından güveniliyor
           </h2>
           <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
             Sıkı güvenlik ve uyumluluk standartlarımız yaptığımız her şeyin
@@ -49,7 +49,7 @@ function TrustSection() {
               99.99% Uptime
             </h3>
             <p className="font-light text-gray-500 dark:text-gray-400">
-              Sıfır bakım kesintisiyle{" "}
+              Sıfır bakım kesintisiyle
             </p>
           </div>
           <div>
@@ -61,7 +61,7 @@ function TrustSection() {
               600M+ Kullanıcı
             </h3>
             <p className="font-light text-gray-500 dark:text-gray-400">
-              Dünya çapında 600 milyondan fazla kullanıcı tarafından güveniliyor{" "}
+              Dünya çapında 600 milyondan fazla kullanıcı tarafından güveniliyor
             </p>
           </div>
           <div>
@@ -86,7 +86,7 @@ function TrustSection() {
               5+ Milyon
             </h3>
             <p className="font-light text-gray-500 dark:text-gray-400">
-              Günlük İşlem Sayısı{" "}
+              Günlük İşlem Sayısı
             </p>
           </div>
         </div>

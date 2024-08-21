@@ -87,10 +87,10 @@ function DropdownNotifications({ align }) {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <span className="block text-sm mb-2">
-                  📣{" "}
+                  📣
                   <span className="font-medium text-gray-800 dark:text-gray-100">
                     Edit your information in a swipe
-                  </span>{" "}
+                  </span>
                   Sint occaecat cupidatat non proident, sunt in culpa qui
                   officia deserunt mollit anim.
                 </span>
@@ -106,10 +106,10 @@ function DropdownNotifications({ align }) {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <span className="block text-sm mb-2">
-                  📣{" "}
+                  📣
                   <span className="font-medium text-gray-800 dark:text-gray-100">
                     Edit your information in a swipe
-                  </span>{" "}
+                  </span>
                   Sint occaecat cupidatat non proident, sunt in culpa qui
                   officia deserunt mollit anim.
                 </span>
@@ -128,7 +128,7 @@ function DropdownNotifications({ align }) {
                   🚀
                   <span className="font-medium text-gray-800 dark:text-gray-100">
                     Say goodbye to paper receipts!
-                  </span>{" "}
+                  </span>
                   Sint occaecat cupidatat non proident, sunt in culpa qui
                   officia deserunt mollit anim.
                 </span>

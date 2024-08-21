@@ -15,7 +15,7 @@ function App() {
     const token = getToken();
 
     if (token) {
-      console.log(token);
+      console.log(decodedToken);
       var decodedToken = getDecodedToken();
       var user = {
         isUser: true,

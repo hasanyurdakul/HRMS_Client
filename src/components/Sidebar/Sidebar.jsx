@@ -325,6 +325,215 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                   </NavLink>
                 </li>
               ) : null}
+              {/* Create Department */}
+              {user.role === "CompanyManager" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createdepartment") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createdepartment"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createdepartment")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createdepartment")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Departman Ekle
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Create Department */}
+              {user.role === "CompanyManager" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createjob") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createjob"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createjob")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createjob")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Meslek Ekle
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+              {/* Assign User */}
+              {user.role === "CompanyManager" ||
+              user.role === "CompanyOwner" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/userempassign") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/userempassign"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/userempassign")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/userempassign")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Kullanıcıya Personel Ata
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Create Department */}
+              {user.role === "CompanyUser" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createleaverequest") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createleaverequest"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createleaverequest")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createleaverequest")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          İzin Talebi Oluştur
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Manage Leave Requests */}
+              {user.role === "CompanyManager" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/manageleaverequests") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/manageleaverequests"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/manageleaverequests")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/manageleaverequests")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          İzin Taleplerini Yönet
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {user.role === "CompanyManager" ||
+              user.role === "CompanyOwner" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createevent") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createevent"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createevent")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createevent")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Etkinlik Oluştur
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
             </ul>
           </div>
         </div>

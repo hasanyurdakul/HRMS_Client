@@ -1,6 +1,19 @@
-import React from "react";
+import dayjs from "dayjs";
+import React, { useEffect, useState } from "react";
+import UpcomingBirthdays from "./UpcomingBirthdays";
+import { nationalHolidayList } from "../../constants/nationalHolidayList";
+import axios from "axios";
 
 function NationalHolidays() {
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+  const [upcomingNationalHolidays, setUpcomingNationalHolidays] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${apiBaseUrl}/NationalHoliday/upcoming`).then((response) => {
+      setUpcomingNationalHolidays(response.data.$values);
+    });
+  }, []);
+
   return (
     <div className=" flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-black shadow-sm rounded-xl">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
@@ -18,14 +31,12 @@ function NationalHolidays() {
                 <th className="p-2">
                   <div className="font-semibold text-left">Tatil Adı</div>
                 </th>
-                <th className="p-2">
-                  <div className="font-semibold text-center">Gün Sayısı</div>
-                </th>
+
                 <th className="p-2">
                   <div className="font-semibold text-center">
                     Başlangıç Tarihi
                   </div>
-                </th>{" "}
+                </th>
                 <th className="p-2">
                   <div className="font-semibold text-center">Bitiş Tarihi</div>
                 </th>
@@ -34,214 +45,34 @@ function NationalHolidays() {
             {/* Table body */}
             <tbody className="text-sm overflow-y-scroll  font-medium ">
               {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Yılbaşı
+              {upcomingNationalHolidays.map((holiday, index) => (
+                <tr key={index}>
+                  <td className="p-2">
+                    <div className="flex items-center">
+                      <div className="text-gray-800 dark:text-gray-100">
+                        {holiday.nationalHolidayName}
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">01.01.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">01.01.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Ulusal Egemenlik ve Çocuk Bayramı
+                  </td>
+
+                  <td className="p-2">
+                    <div className="text-center">
+                      {holiday.nationalHolidayStartDate &&
+                        holiday.nationalHolidayStartDate
+                          .split("T")[0]
+                          .replaceAll("-", "/")}
                     </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">23.04.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">23.04.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      İşçi Bayramı
+                  </td>
+                  <td className="p-2">
+                    <div className="text-center">
+                      {holiday.nationalHolidayEndDate &&
+                        holiday.nationalHolidayEndDate
+                          .split("T")[0]
+                          .replaceAll("-", "/")}
                     </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">01.05.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">01.05.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Atatürk&apos;ü Anma, Gençlik ve Spor Bayramı
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">19.05.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">19.05.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Kurban Bayramı
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">4</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">06.06.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">10.06.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Zafer Bayramı
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">30.08.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">30.08.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Cumhuriyet Bayramı
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">29.10.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">29.10.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Ramazan Bayramı (Birinci Gün)
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">10.03.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">10.03.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Ramazan Bayramı (İkinci Gün)
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">11.03.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">11.03.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Ramazan Bayramı (Üçüncü Gün)
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">12.03.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">12.03.2025</div>
-                </td>
-              </tr>
-              {/* Row */}
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="text-gray-800 dark:text-gray-100">
-                      Kurban Bayramı (Birinci Gün)
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="text-center">1</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">06.06.2025</div>
-                </td>{" "}
-                <td className="p-2">
-                  <div className="text-center">06.06.2025</div>
-                </td>
-              </tr>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
