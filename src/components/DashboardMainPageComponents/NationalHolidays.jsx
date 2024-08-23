@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import UpcomingBirthdays from "./UpcomingBirthdays";
-import { nationalHolidayList } from "../../constants/nationalHolidayList";
 import axios from "axios";
 
 function NationalHolidays() {

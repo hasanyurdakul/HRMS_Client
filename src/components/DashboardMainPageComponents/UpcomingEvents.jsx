@@ -59,7 +59,7 @@ function UpcomingEvents() {
             <tbody className="text-sm font-medium ">
               {events.length > 0 &&
                 events.map((event, index) => (
-                  <>
+                  <div key={index}>
                     <tr key={index}>
                       <td className="p-2">
                         <div className="flex items-center">
@@ -91,8 +91,7 @@ function UpcomingEvents() {
                         </div>
                       </td>
                     </tr>
-                    <Divider flexItem className="w-full" />
-                  </>
+                  </div>
                 ))}
             </tbody>
           </table>

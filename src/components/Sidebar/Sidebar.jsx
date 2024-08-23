@@ -325,6 +325,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                   </NavLink>
                 </li>
               ) : null}
+
               {/* Create Department */}
               {user.role === "CompanyManager" ? (
                 <li
@@ -394,6 +395,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                   </NavLink>
                 </li>
               ) : null}
+
               {/* Assign User */}
               {user.role === "CompanyManager" ||
               user.role === "CompanyOwner" ? (
@@ -430,7 +432,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                 </li>
               ) : null}
 
-              {/* Create Department */}
+              {/* Create Leave Request */}
               {user.role === "CompanyUser" ? (
                 <li
                   className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
@@ -458,6 +460,41 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                         />
                         <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                           İzin Talebi Oluştur
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Create Expense Request */}
+              {user.role === "CompanyUser" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/createexpenserequest") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/createexpenserequest"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/createexpenserequest")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/createexpenserequest")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Masraf Talebi Oluştur
                         </span>
                       </div>
                     </div>
@@ -500,6 +537,42 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
                 </li>
               ) : null}
 
+              {/* Manage Expense Requests */}
+              {user.role === "CompanyManager" ? (
+                <li
+                  className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${
+                    pathname.endsWith("/manageexpenserequests") &&
+                    "from-accent/[0.12] dark:from-secondary/[0.24] to-secondary[0.04]"
+                  }`}
+                >
+                  <NavLink
+                    end
+                    to="/dashboard/manageexpenserequests"
+                    className={`block text-gray-800 dark:text-gray-100 truncate transition duration-150 ${
+                      pathname.endsWith("/manageexpenserequests")
+                        ? ""
+                        : "hover:text-gray-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="grow flex items-center">
+                        <AddBusiness
+                          className={`shrink-0 w-4 h-4 fill-current ${
+                            pathname.endsWith("/manageexpenserequests")
+                              ? "text-primary"
+                              : "text-gray-400 dark:text-gray-500"
+                          }`}
+                        />
+                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                          Masraf Taleplerini Yönet
+                        </span>
+                      </div>
+                    </div>
+                  </NavLink>
+                </li>
+              ) : null}
+
+              {/* Create Event */}
               {user.role === "CompanyManager" ||
               user.role === "CompanyOwner" ? (
                 <li

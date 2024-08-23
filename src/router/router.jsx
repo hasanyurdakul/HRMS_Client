@@ -16,6 +16,8 @@ import DashboardUserEmployeeAssignPage from "../pages/DashboardPages/DashboardUs
 import DashboardCreateLeaveRequestPage from "../pages/DashboardPages/DashboardCreateLeaveRequestPage";
 import DashboardManageLeaveRequestsPage from "../pages/DashboardPages/DashboardManageLeaveRequestsPage";
 import DashboardCreateEventPage from "../pages/DashboardPages/DashboardCreateEventPage";
+import DashboardCreateExpenseRequestPage from "../pages/DashboardPages/DashboardCreateExpenseRequestPage";
+import DashboardManageExpenseRequestsPage from "../pages/DashboardPages/DashboardManageExpenseRequestsPage";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/createevent",
         element: <DashboardCreateEventPage />,
+      },
+      {
+        path: "/dashboard/createexpenserequest",
+        element: <DashboardCreateExpenseRequestPage />,
+      },
+      {
+        path: "/dashboard/manageexpenserequests",
+        element: <DashboardManageExpenseRequestsPage />,
       },
     ],
   },
